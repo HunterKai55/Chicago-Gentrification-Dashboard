@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.5/dist/leaflet.css">
+    <script type="importmap">
+		{"imports": {"leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.5/dist/leaflet.js"}}
+	</script>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+    <script type="module" src="map.js"></script>
 </head>
 <body>
 
@@ -22,16 +28,25 @@
     <section id="home">
         <div class="banner">
             <div class="banner-content">
-                <h1>Chicago Gentrification</h1>
+                <h1>Does new development coincide with changing income and demographic changes across Chicago?</h1>
                 <p>
-                    Exploring the impact of housing development
-                    on Chicago's neighborhoods and communities.
+                    Our project analyzes 20 years of data to understand how housing development, income, and population trends have changed across Chicagos 50 wards and what the next 10 years may look like.
                 </p>
             </div>
         </div>
-        
-        <h1>Chicago Gentrification Dashboard</h1>
-        <p>Explore how housing development impacts Chicago neighborhoods</p>
+        <div class="map-graph">
+            <div id="map"></div>
+            <div id="graphs">
+                <h2 id="select">Select a Census Tract</h2>
+                <h3>Building Permits Over time</h3>
+                <div id="permits-chart"></div>
+                <h3>Household income over time</h3>
+                <div id="income-chart"></div>
+                <h3>Racial demographics over time</h3>
+                <div id="race-chart"></div>
+                <div id="population-chart"></div>
+            </div>
+        </div>
     </section>
 </body>
 </html>
