@@ -51,6 +51,7 @@ function resetHighlight(e) {
 function connectMapAndZoom(e) {
 	const layer = e.target;
 	const geoid = String(layer.feature.properties.geoid10);
+	document.getElementById("geoid").textContent = "Census Tract: " + geoid;
 	loadTractData(geoid);
 	map.fitBounds(e.target.getBounds());
 }
@@ -227,8 +228,20 @@ function updateCharts(data) {
 				title: "Reported Construction Cost ($)",
 				overlaying: "y",
 				side: "right"
+			},
+			autosize: true,
+			legend: {
+				orientation: "h",
+				y: -0.25,
+				x: 0.5,
+				xanchor: "center",
+				font: {
+					size: 11
+				}
 			}
-		}
+		}, {
+    responsive: true
+}
 	);
 
 	//create the income chart
@@ -258,8 +271,20 @@ function updateCharts(data) {
 		{
 			title: "Household Income Over Time",
 			xaxis: {title: "Year"},
-			yaxis: {title: "Estimated Numberr of Households"}
-		}
+			yaxis: {title: "Estimated Numberr of Households"},
+			autosize: true, 
+			legend: {
+				orientation: "h",
+				y: -0.25,
+				x: 0.5,
+				xanchor: "center",
+				font: {
+					size: 11
+				}
+			}
+		}, {
+    responsive: true
+}
 	
 	);
 
@@ -269,7 +294,8 @@ function updateCharts(data) {
 		yaxis: {
 			title: "Percentage of Population",
 			ticksuffix: "%"
-		}
+		},
+		autosize: true,
 	});
 
 	//population chart
@@ -282,8 +308,20 @@ function updateCharts(data) {
 	}], {
 		title: "Population Changes Over Time",
 		xaxis: { title: "Year" },
-		yaxis: { title: "Total Population" }
-	});
+		yaxis: { title: "Total Population" },
+		autosize: true,
+		legend: {
+				orientation: "h",
+				y: -0.25,
+				x: 0.5,
+				xanchor: "center",
+				font: {
+					size: 11
+				}
+			}
+	}, {
+    responsive: true
+});
 }
 
 
