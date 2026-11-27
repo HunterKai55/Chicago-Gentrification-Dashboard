@@ -51,7 +51,12 @@ function resetHighlight(e) {
 function connectMapAndZoom(e) {
 	const layer = e.target;
 	const geoid = String(layer.feature.properties.geoid10);
+	const commArea = String(layer.feature.properties.community_name);
+	console.log("All properties:", layer.feature.properties);
 	document.getElementById("geoid").textContent = "Census Tract: " + geoid;
+	document.getElementById("comm-area").textContent = "Community Area: " + commArea;
+	console.log("GEOID:", geoid);
+	console.log("Community Area:", commArea);
 	loadTractData(geoid);
 	map.fitBounds(e.target.getBounds());
 }
