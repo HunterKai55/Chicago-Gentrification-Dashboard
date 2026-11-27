@@ -58,7 +58,7 @@ function connectMapAndZoom(e) {
 	console.log("GEOID:", geoid);
 	console.log("Community Area:", commArea);
 	loadTractData(geoid);
-	map.fitBounds(e.target.getBounds());
+	//map.fitBounds(e.target.getBounds());
 }
 
 function onEachFeature(feature, layer) {
