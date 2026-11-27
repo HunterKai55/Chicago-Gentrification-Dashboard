@@ -72,7 +72,8 @@ function onEachFeature(feature, layer) {
 function loadTractData(geoid) {
     console.log("Selected GEOID:", geoid);
 
-    fetch(`http://127.0.0.1:5000/api/tract/${geoid}`)
+    //fetch(`http://127.0.0.1:5000/api/tract/${geoid}`)
+	fetch(`https://chicago-gentrification-dashboard.onrender.com/api/tract/${geoid}`)
     .then(response => {
         console.log("Response:", response.status);
 
